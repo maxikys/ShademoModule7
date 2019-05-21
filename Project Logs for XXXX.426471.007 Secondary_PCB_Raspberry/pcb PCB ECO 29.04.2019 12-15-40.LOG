@@ -1,0 +1,20 @@
+Added Component: Designator=XT2(Pad_1.3X0.8)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Контактмодуль"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ManufacturerPartNumber"; Value = "PAD1.3x0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Modify"; Value = "15.02.2016 15:20:49"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NET_NAME"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "111"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "PAD1.3x0.8_Контактмодуль"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PAD1.3x0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Автор"; Value = "Ткаченко М."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество1"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество2"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Разрешен к применению"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена1"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена2"; Value = "0"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Shasi Pin=XT2-1
+Added Net: Name=Shasi
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component XT2 PAD

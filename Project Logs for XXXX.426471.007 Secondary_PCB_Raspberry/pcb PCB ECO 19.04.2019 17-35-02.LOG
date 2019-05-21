@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=GND_CAN1 Pin=C47-2
+Removed Pin From Net: NetName=GND_CAN1 Pin=C50-1
+Removed Pin From Net: NetName=GND_CAN1 Pin=C51-2
+Removed Pin From Net: NetName=GND_CAN1 Pin=DD5-11
+Removed Pin From Net: NetName=GND_CAN1 Pin=DD5-15
+Removed Pin From Net: NetName=GND_CAN1 Pin=L7-2
+Removed Pin From Net: NetName=GND_CAN1 Pin=R42-1
+Added Pin To Net: NetName=GND_CAN2 Pin=C47-2
+Added Pin To Net: NetName=GND_CAN2 Pin=C50-1
+Added Pin To Net: NetName=GND_CAN2 Pin=C51-2
+Added Pin To Net: NetName=GND_CAN2 Pin=DD5-11
+Added Pin To Net: NetName=GND_CAN2 Pin=DD5-15
+Added Pin To Net: NetName=GND_CAN2 Pin=L7-2
+Added Pin To Net: NetName=GND_CAN2 Pin=R42-1
+Added Net: Name=GND_CAN2

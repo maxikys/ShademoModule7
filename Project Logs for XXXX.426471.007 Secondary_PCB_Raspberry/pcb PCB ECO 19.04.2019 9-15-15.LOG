@@ -1,0 +1,126 @@
+Added Component: Designator=C52(CAPC2012N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.murata.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://search.murata.co.jp/Ceramy/image/img/A01X/partnumbering_e_01.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ManufacturerPartNumber"; Value = "GRM2165C1H472JA01D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Modify"; Value = "01.09.2017"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ +125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "GRM2165C1H472JA01D_Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sorting"; Value = "4700"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier P/N"; Value = "490-1631-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TKE"; Value = "NP0, COG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "± 10 %"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4700"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueBOM"; Value = "Конденсатор GRM2165C1H472JA01D "Murata Electronics" (4700 пФ ± 10 %, 50 В, NP0, COG, SMD 0805)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "50 В"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Автор"; Value = "Ткаченко М."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество1"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество2"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Разрешен к применению"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена1"; Value = "0,28"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена2"; Value = "0,19"; VariantName = "[No Variations]"
+Added Component: Designator=DD4(SOIC20)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.analog.com/en/index.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://www.analog.com/media/en/technical-documentation/data-sheets/ADM3055E.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Analog Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ManufacturerPartNumber"; Value = "ADM3055EBRIZ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Modify"; Value = "29.03.2019 16:43:48"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40°C ~ +105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "ADM3055EBRIZ_Analog Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier P/N"; Value = "ADM3055EBRIZ-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "ADM3055EBRIZ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueBOM"; Value = "Микросхема  ADM3055EBRIZ "Analog Devices""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "5,0 В"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Автор"; Value = "Ткаченко М."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество1"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество2"; Value = "31"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Разрешен к применению"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена1"; Value = "12,92"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена2"; Value = "11,37"; VariantName = "[No Variations]"
+Added Component: Designator=R39(RESC1608N_SL)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.yageo.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.yageo.com/NewPortal/yageodocoutput?fileName=/pdf/R-Chip/PYu-RC_Group_51_RoHS_L_3.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ManufacturerPartNumber"; Value = "RC0603FR-0715KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Marking"; Value = "1502"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Modify"; Value = "26.01.2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ +155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "Chip Resistor, Body 1.6x0.8mm, IPC Medium Density"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "RC0603FR-0715KL_Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0,1 Вт"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sorting"; Value = "15000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "± 1 %"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "15к"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueBOM"; Value = "Резистор RC0603FR-0715KL "Yageo" (15 кОм ± 1 %, 0,1 Вт SMD 0603)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Автор"; Value = "Хоменко С.П."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество1"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество2"; Value = "25"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Разрешен к применению"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ТКС"; Value = "±100ppm/C°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена1"; Value = "0,014"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена2"; Value = "0,01"; VariantName = "[No Variations]"
+Added Component: Designator=R41(RESC1608N_SL)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.yageo.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.yageo.com/NewPortal/yageodocoutput?fileName=/pdf/R-Chip/PYu-RC_Group_51_RoHS_L_3.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ManufacturerPartNumber"; Value = "RC0603FR-0715KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Marking"; Value = "1502"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Modify"; Value = "26.01.2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ +155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "Chip Resistor, Body 1.6x0.8mm, IPC Medium Density"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "RC0603FR-0715KL_Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0,1 Вт"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sorting"; Value = "15000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "± 1 %"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "15к"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueBOM"; Value = "Резистор RC0603FR-0715KL "Yageo" (15 кОм ± 1 %, 0,1 Вт SMD 0603)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Автор"; Value = "Хоменко С.П."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество1"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Количество2"; Value = "25"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Разрешен к применению"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ТКС"; Value = "±100ppm/C°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена1"; Value = "0,014"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Цена2"; Value = "0,01"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND_CAN1 Pin=C52-1
+Added Pin To Net: NetName=NetC52_2 Pin=C52-2
+Added Pin To Net: NetName=GND Pin=DD4-1
+Added Pin To Net: NetName=GND Pin=DD4-2
+Added Pin To Net: NetName=+5 В Pin=DD4-3
+Added Pin To Net: NetName=+3,3 В_GSM Pin=DD4-4
+Added Pin To Net: NetName=CAN1_RX_MCU Pin=DD4-5
+Added Pin To Net: NetName=CAN1_TX_MCU Pin=DD4-7
+Added Pin To Net: NetName=NetDD4_9 Pin=DD4-9
+Added Pin To Net: NetName=GND Pin=DD4-10
+Added Pin To Net: NetName=GND_CAN1 Pin=DD4-11
+Added Pin To Net: NetName=NetDD4_12 Pin=DD4-12
+Added Pin To Net: NetName=NetDD4_13 Pin=DD4-13
+Added Pin To Net: NetName=NetDD4_14 Pin=DD4-14
+Added Pin To Net: NetName=GND_CAN1 Pin=DD4-15
+Added Pin To Net: NetName=NetC46_1 Pin=DD4-16
+Added Pin To Net: NetName=NetC44_1 Pin=DD4-18
+Added Pin To Net: NetName=NetC44_2 Pin=DD4-19
+Added Pin To Net: NetName=NetC44_1 Pin=DD4-20
+Added Pin To Net: NetName=NetDD4_9 Pin=R39-1
+Added Pin To Net: NetName=GND Pin=R39-2
+Added Pin To Net: NetName=GND_CAN1 Pin=R41-1
+Added Pin To Net: NetName=NetDD4_12 Pin=R41-2
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C52 4700
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component DD4 ADM3055EBRIZ
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component R39 15к  1%
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component R41 15к  1%

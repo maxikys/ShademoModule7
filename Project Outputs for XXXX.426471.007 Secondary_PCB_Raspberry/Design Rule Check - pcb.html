@@ -1,0 +1,564 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">24.04.2019</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:18:25</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:12</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc" class="file"><acronym title="C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc">C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">72</td></tr>
+</table>
+</td>
+</table><a name="IDWBA0RW1V3XYZQLNRG5UFJ2IOPO5BVEW303B2SGBXCR4UDWQC1WK"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNMUZNZ3QDBVNNTXWNRTKQINOJ41SYKBS55A5RH3U50ERLPGUUWC">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">66</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCZ0JNJL0MQX4MJZMOISMHC4C1D0IQK2YFOILETPLOW2SMW45RNSM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHVWC2YIRXHF2CBNBNQTXS25I1I1LERXBYTRDCYGHWWGZDA03IT5P">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVXJQVUIOTCIRJQU0M1WEPADJGPURS5GEZ5XB51HK4S0E0NW05PEL">Width Constraint (Min=0.3mm) (Max=2mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHUVMB1WFT3IVJA3JFVUMT0P4EIY0G3LNBJENIJPFH342HDIDBAVN">Routing Layers(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1EK0QHTOC304M3DJ150FIOUCJOVHAHDANVX235PP1UV4XWR5B0EG">Routing Via (MinHoleWidth=0.5mm) (MaxHoleWidth=1.5mm) (PreferredHoleWidth=0.5mm) (MinWidth=1mm) (MaxWidth=2mm) (PreferedWidth=1mm) (All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLH1PXFSTFCPTICREHM3XO5C24HZBF4M1DV5ELCD4DUHL2OYV3AEP">Differential Pairs Uncoupled Length using the Gap Constraints (Min=0.254mm) (Max=0.254mm) (Prefered=0.254mm)  and Width Constraints (Min=0.381mm) (Max=0.381mm) (Prefered=0.381mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZC3BIOEPQ33GM45SZIWDQS42FLWSK3GLRYZS5MUN1WTHX4INJMD">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHZIEEEDEXP3IFSEN3UX5ZZF2MCPGEACO3WC45MDYBVKNTKHAYY5L">Hole Size Constraint (Min=0.025mm) (Max=5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ3BH1GPSHS5PHZPBJYJXALVXJCTAXUSOTDJCZRPCBFEIGBUV5JIN">Pads and Vias to follow the Drill pairs settings</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP55WWAULKFJW4LN05XSBEA14F2HUDRD1AG5HUOHJ115HVUIKKTL">Hole To Hole Clearance (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCL4WZNBIFUVVW55FNWKO1OKADBTNDHCGRU4QPOBW0350ZAUSY1K">Minimum Solder Mask Sliver (Gap=0.01mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNZVEYOGA4GDZN3CUJXUPEU11TF4HQI205KZIT0CA5TSTH3U12T3C">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGW00HL1WC0ZRDMZIH05KKLR2DJXD0SH0EFECCP3H1UPUJQ0GPVH">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZMXUQ1EIRW3PBRP5MQSM5NAOECPX4QTLB3JKFO3AWFYPXYUJMHO">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZP5B5KXSHIU4ISURMZRDGSLLLKDCJYPOMMVU3FINRMQOXVNHFF0K">Component Clearance Constraint ( Horizontal Gap = -0.5mm, Vertical Gap = -0.5mm ) (All),(All) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID02IMDYU2Q3HLB4G0QNM4LPOEYKI2HKZJYEDFVCIOAOESPIG3UFCL">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">72</td>
+</tr>
+</table><br><a name="IDNMUZNZ3QDBVNNTXWNRTKQINOJ41SYKBS55A5RH3U50ERLPGUUWC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.15mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9704.225mil|Location2.X=9709.162mil|Location1.Y=9384.146mil|Location2.Y=9389.083mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.217mil|Location2.X=9572.154mil|Location1.Y=9318.398mil|Location2.Y=9323.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.28mil|Location2.X=9568.217mil|Location1.Y=9158.162mil|Location2.Y=9163.099mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True">Clearance Constraint: (0.1mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True">Clearance Constraint: (0.1mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True">Clearance Constraint: (0.1mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True">Clearance Constraint: (0.1mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True">Clearance Constraint: (0.1mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9564.139mil|Location2.X=9571.294mil|Location1.Y=9157.053mil|Location2.Y=9164.208mil|Absolute=True">Clearance Constraint: (0.1mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10155.799mil|Location2.X=10160.736mil|Location1.Y=8889.264mil|Location2.Y=8894.201mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True">Clearance Constraint: (0.001mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True">Clearance Constraint: (0.001mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True">Clearance Constraint: (0.001mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True">Clearance Constraint: (0.001mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True">Clearance Constraint: (0.001mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10152.73mil|Location2.X=10163.131mil|Location1.Y=8792.421mil|Location2.Y=8800.062mil|Absolute=True">Clearance Constraint: (0.001mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9549.5mil|Location2.X=9554.437mil|Location1.Y=8794.382mil|Location2.Y=8799.319mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9563.581mil|Location2.X=9568.518mil|Location1.Y=8890.469mil|Location2.Y=8895.406mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9582.965mil|Location2.X=9587.902mil|Location1.Y=8818.398mil|Location2.Y=8823.335mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9566.108mil|Location2.X=9573.263mil|Location1.Y=8888.155mil|Location2.Y=8895.31mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID1EK0QHTOC304M3DJ150FIOUCJOVHAHDANVX235PP1UV4XWR5B0EG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Routing Via (MinHoleWidth=0.5mm) (MaxHoleWidth=1.5mm) (PreferredHoleWidth=0.5mm) (MinWidth=1mm) (MaxWidth=2mm) (PreferedWidth=1mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10139.201mil|Location2.X=10179.697mil|Location1.Y=11611.642mil|Location2.Y=11652.138mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10139.201mil|Location2.X=10179.697mil|Location1.Y=11611.642mil|Location2.Y=11652.138mil|Absolute=True">Routing Via Style: Via (133.35mm,226.45mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10052.586mil|Location2.X=10093.083mil|Location1.Y=11611.642mil|Location2.Y=11652.138mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10052.586mil|Location2.X=10093.083mil|Location1.Y=11611.642mil|Location2.Y=11652.138mil|Absolute=True">Routing Via Style: Via (131.15mm,226.45mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10052.587mil|Location2.X=10093.083mil|Location1.Y=11654.95mil|Location2.Y=11695.446mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10052.587mil|Location2.X=10093.083mil|Location1.Y=11654.95mil|Location2.Y=11695.446mil|Absolute=True">Routing Via Style: Via (131.15mm,227.55mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10095.894mil|Location2.X=10136.39mil|Location1.Y=11611.643mil|Location2.Y=11652.139mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10095.894mil|Location2.X=10136.39mil|Location1.Y=11611.643mil|Location2.Y=11652.139mil|Absolute=True">Routing Via Style: Via (132.25mm,226.45mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10095.894mil|Location2.X=10136.39mil|Location1.Y=11654.95mil|Location2.Y=11695.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10095.894mil|Location2.X=10136.39mil|Location1.Y=11654.95mil|Location2.Y=11695.445mil|Absolute=True">Routing Via Style: Via (132.25mm,227.55mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10139.201mil|Location2.X=10179.697mil|Location1.Y=11654.95mil|Location2.Y=11695.446mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10139.201mil|Location2.X=10179.697mil|Location1.Y=11654.95mil|Location2.Y=11695.446mil|Absolute=True">Routing Via Style: Via (133.35mm,227.55mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,132 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\alexey\Desktop\XXXX_426471_007_Secondary_PCB_Raspberry\pcb.PcbDoc
+Date     : 24.04.2019
+Time     : 11:18:25
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-14(121.085mm,169.875mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-15(118.07mm,168.7mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (0.1mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (0.1mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (0.1mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (0.1mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (0.1mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (0.1mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-16(118.02mm,162.73mm) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0.001mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0.001mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0.001mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0.001mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0.001mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0.001mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-8(133.47mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+   Violation between Clearance Constraint: (0mm < 0.15mm) Between Region (0 hole(s)) Keep-Out Layer And Pad XS5-17(118.12mm,155.65mm) on Multi-Layer 
+Rule Violations :66
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.3mm) (Max=2mm) (Preferred=0.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Layers(All)
+Rule Violations :0
+
+Processing Rule : Routing Via (MinHoleWidth=0.5mm) (MaxHoleWidth=1.5mm) (PreferredHoleWidth=0.5mm) (MinWidth=1mm) (MaxWidth=2mm) (PreferedWidth=1mm) (All)
+   Violation between Routing Via Style: Via (133.35mm,226.45mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm
+   Violation between Routing Via Style: Via (131.15mm,226.45mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm
+   Violation between Routing Via Style: Via (131.15mm,227.55mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm
+   Violation between Routing Via Style: Via (132.25mm,226.45mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm
+   Violation between Routing Via Style: Via (132.25mm,227.55mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm
+   Violation between Routing Via Style: Via (133.35mm,227.55mm) from Top Layer to Bottom Layer Actual Size : 0.8mm Actual Hole Size : 0.5mm
+Rule Violations :6
+
+Processing Rule : Differential Pairs Uncoupled Length using the Gap Constraints (Min=0.254mm) (Max=0.254mm) (Prefered=0.254mm)  and Width Constraints (Min=0.381mm) (Max=0.381mm) (Prefered=0.381mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=5mm) (All)
+Rule Violations :0
+
+Processing Rule : Pads and Vias to follow the Drill pairs settings
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.01mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = -0.5mm, Vertical Gap = -0.5mm ) (All),(All) 
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 72
+Waived Violations : 0
+Time Elapsed        : 00:00:12

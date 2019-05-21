@@ -1,0 +1,10 @@
+Removed Member From Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=XP3
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C35 0,01לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C37 10לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C40 0,1לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C42 0,1לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C44 0,1לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component L5 600
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component L6 600
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component VD4 PESD2CAN
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component XP5 PLS2-2

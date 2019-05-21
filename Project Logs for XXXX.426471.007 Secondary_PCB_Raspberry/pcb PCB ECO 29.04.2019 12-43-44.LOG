@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=CAN2_H Pin=XT1-1
+Added Pin To Net: NetName=CAN2_L Pin=XT1-2
+Change Net Name : Old Net Name=CAN2_H New Net Name=CAN1_H
+Change Net Name : Old Net Name=CAN2_L New Net Name=CAN1_L

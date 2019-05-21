@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=GND_CAN1 Pin=C53-1
+Removed Pin From Net: NetName=GND_CAN1 Pin=VD5-3
+Change Component Designator: OldDesignator= NewDesignator=C35
+Change Component Designator: OldDesignator= NewDesignator=C48
+Change Component Designator: OldDesignator= NewDesignator=C49
+Change Component Designator: OldDesignator= NewDesignator=C52
+Change Component Designator: OldDesignator= NewDesignator=R43
+Change Component Designator: OldDesignator= NewDesignator=R44
+Change Component Designator: OldDesignator= NewDesignator=VD4
+Change Component Designator: OldDesignator= NewDesignator=XP6
+Added Pin To Net: NetName=GND_CAN2 Pin=C53-1
+Added Pin To Net: NetName=GND_CAN2 Pin=VD5-3
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C35 0,01לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C48 10לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C49 0,1לך
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component C52 4700
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component L5 600
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component R43 62
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component R44 62
+Added Member To Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List2 Member=Component VD4 PESD2CAN

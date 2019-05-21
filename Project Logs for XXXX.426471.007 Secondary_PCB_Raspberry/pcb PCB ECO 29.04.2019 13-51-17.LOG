@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=GND Pin=R1-1
+Removed Member From Class: ClassName=XXXX.426471.007 Secondary_PCB_Raspberry_List1 Member=R1
+Added Pin To Net: NetName=GND Pin=VT1-1

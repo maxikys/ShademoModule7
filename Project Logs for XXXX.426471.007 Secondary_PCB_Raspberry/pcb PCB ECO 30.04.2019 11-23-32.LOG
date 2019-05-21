@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=GND_I2C Pin=XS8-4
+Change Component Description : Designator=DD4 Old Description=I?C Digital Isolator 5000Vrms 2 Channel 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) New Description=I?C Digital Isolator 5000Vrms 2 Channel 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width)
+Change component parameters: Designator = "XS8"; Footprint = "2200326_UP4_Phinix"; UniqueID = "\BFKQJIIK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.phoenixcontact.com/online/portal/pi?1dmy&urile=wcm%3apath%3a/piru/web/home"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "https://www.phoenixcontact.com/online/portal/pi/?uri=pxc-oc-itemdetail:pid=2200326&library=piru&pcck=P-11-02-11&tab=1&selectedCategory=ALL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Phoenixcontact"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ManufacturerPartNumber"; Value = "MSTBO 2,5/ 4-G1PR GY7035 - 2200326"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Modify"; Value = "19.03.2019 19:25:13"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Net_Name1"; Value = "I2C_SDA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Net_Name2"; Value = "Общий"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Net_Name3"; Value = "I2C_SCL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Net_Name4"; Value = "+5 В"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature"; Value = "-40°C ~ +85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = "MSTBO 2,5/ 4-G1PR GY7035 - 2200326_Phoenixcontact"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier P/N"; Value = "2200326"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "MSTBO 2,5/ 4-G1PR GY7035 - 2200326"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ValueBOM"; Value = "Розетка  2200326 "Phoenixcontact""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Автор"; Value = "Ткаченко М."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Количество1"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Количество2"; Value = "10"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Разрешен к применению"; Value = "True"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Цена1"; Value = "0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Цена2"; Value = "0"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PROG_RX/CAN Pin=DD2-1
+Added Pin To Net: NetName=PROG_TX/CAN Pin=DD2-4
+Added Pin To Net: NetName=+5 В_I2C Pin=XS8-4
